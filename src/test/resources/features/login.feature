@@ -3,14 +3,14 @@ Feature: Admin portal Login
 
   @tag1
   Scenario: Loggedin with valid credentials
-    Given admin opens the "http://integratedtoolingsystems.in/1swishzz_staging/admin" in the "chrome" browser
-    And enters the username "admin@admin.com" and password "123456"
+    Given admin opens the "http://integratedtoolingsystems.in/" in the "chrome" browser
+    And enters the username "testadmin.com" and password "123456"
     When click on the login button
     Then then admin views the dashboard with "Welcome Admin" message
     And admin close the browser
 
   Scenario Outline: Loggedin with valid credentials
-    Given admin opens the "http://integratedtoolingsystems.in/1swishzz_staging/admin" in the "chrome" browser
+    Given admin opens the "http://integratedtoolingsystems.in/" in the "chrome" browser
     And enters the username <username> and password <password>
     When click on the login button
   

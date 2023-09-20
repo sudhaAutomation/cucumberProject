@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.swhizz</groupId>
-	<artifactId>admin-portal</artifactId>
+	<groupId>com.admin</groupId>
+	<artifactId>admin-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>admin-portal</name>
+	<name>admin-demo</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -27,12 +27,28 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.5.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>7.13.0</version>
 		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-plugin</artifactId>
+			<version>7.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-gherkin</artifactId>
+			<version>7.13.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>tag-expressions</artifactId>
+			<version>5.0.6</version>
+		</dependency>
+
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -45,7 +61,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-plugin</artifactId>
+			<artifactId>datatable</artifactId>
 			<version>7.13.0</version>
 		</dependency>
 		<dependency>
@@ -53,19 +69,6 @@
 			<artifactId>cucumber-testng</artifactId>
 			<version>7.13.0</version>
 		</dependency>
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-gherkin</artifactId>
-			<version>7.13.0</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-jvm</artifactId>
-			<version>7.13.0</version>
-			<type>pom</type>
-		</dependency>
-
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
@@ -77,13 +80,6 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>4.1.2</version>
 		</dependency>
-
-		<!--Hamcrest Dependency -->
-		<!-- <dependency> <groupId>org.hamcrest</groupId> <artifactId>hamcrest</artifactId> 
-			<version>2.2</version> <scope>test</scope> </dependency> -->
-
-		<!-- <dependency> <groupId>io.qameta.allure</groupId> <artifactId>allure-cucumber4-jvm</artifactId> 
-			<version>2.24.0</version> <scope>test</scope> </dependency> -->
 
 	</dependencies>
 
@@ -99,9 +95,21 @@
 				</configuration>
 			</plugin>
 
-			<!-- <plugin> <groupId>io.qameta.allure</groupId> <artifactId>allure-maven</artifactId> 
-				<version>2.10.0</version> <configuration> <reportVersion>2.14.0</reportVersion> 
-				</configuration> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration>
+					<includes>
+						<include>**/TestNgCucumberSuiteRunner.java</include>
+					</includes>
+					<argLine>
+						-Dcucumber.execution.dry-run=false
+						-Dcucumber.filter.tags=""
+						-Dcucumber.plugin="pretty, html:target/bdd/report.html, testng:target/testng/"
+					</argLine>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>

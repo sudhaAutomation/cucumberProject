@@ -2,8 +2,8 @@
 Feature: Add Course module
 
   Background: Loggedin with valid credentials
-    Given admin opens the "http://integratedtoolingsystems.in/1swishzz_staging/admin" in the "chrome" browser
-    And enters the username "admin@admin.com" and password "123456"
+    Given admin opens the "http://integratedtoolingsystems.in/" in the "chrome" browser
+    And enters the username "testadmin.com" and password "123456"
     When click on the login button
    # And wait 8 seconds
     Then then admin views the dashboard with "Welcome Admin" message
@@ -18,7 +18,7 @@ Feature: Add Course module
       | Category           | Java                                                                 |
       | Course Name        | Core Java                                                            |
       | Course URL         | www.oracle.com/java                                                  |
-      | choose file        | C:\\Users\\SWHIZZ TECHNOLOGIES\\Downloads\\Testing\\pics\\Admin.html |
+      | choose file        | C:\\Users\\sudha\\Downloads\\Testing\\pics\\Admin.html |
       | course video link  | www.oracle.com/java.mp4                                              |
       | is popular         | Yes                                                                  |
       | sort order         |                                                                    2 |
