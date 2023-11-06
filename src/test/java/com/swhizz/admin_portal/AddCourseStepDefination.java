@@ -25,7 +25,11 @@ public class AddCourseStepDefination {
 		String acttitle = driver.findElement(By.xpath("//h3[contains(text(),'Courses List')]")).getText();
 		Assert.assertTrue("Courses List".equalsIgnoreCase(acttitle));
 	}
-
+	@Then("driver present in the dashborad")
+	public void driver_present_in_the_dashborad() {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new io.cucumber.java.PendingException();
+	}
 	@When("admin clicks on the add course button")
 	public void admin_clicks_on_the_add_course_button() {
 		driver.findElement(By.xpath("//header/div[1]/div[1]/div[1]/a[1]")).click();
@@ -44,6 +48,11 @@ public class AddCourseStepDefination {
 		new Select(driver.findElement(By.name("category_id"))).selectByVisibleText(details.get("Category"));
 		driver.findElement(By.name("course_name")).sendKeys(details.get("Course Name"));
 		driver.findElement(By.name("course_slug")).sendKeys(details.get("Course URL"));
+
+		driver.switchTo().frame(driver.findElement(By.id("TypeHere11_ifr")));
+		driver.findElement(By.xpath("/html[1]/body[1]/p[1]")).sendKeys("shdfjgsfgdshfhdsgfhgdshfg");
+		driver.switchTo().parentFrame();
+
 		driver.findElement(By.name("userfile")).sendKeys(details.get("choose file"));
 		driver.findElement(By.name("traning_video")).sendKeys(details.get("course video link"));
 		new Select(driver.findElement(By.name("popular_type"))).selectByVisibleText(details.get("is popular"));

@@ -9,11 +9,10 @@ Feature: Admin portal Login
     Then then admin views the dashboard with "Welcome Admin" message
     And admin close the browser
 
-  Scenario Outline: Loggedin with valid credentials
+  Scenario Outline: Loggedin with invalid credentials
     Given admin opens the "http://integratedtoolingsystems.in/1swishzz_staging/admin" in the "chrome" browser
     And enters the username <username> and password <password>
     When click on the login button
-  
     Then admin view the error message as "Please login with valid credentials"
     And admin close the browser
 

@@ -23,8 +23,7 @@ public class LoginStepDefinations {
 	@Given("admin opens the {string} in the {string} browser")
 	public void admin_opens_the_in_the_browser(String url, String browser) {
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\SWHIZZ TECHNOLOGIES\\Downloads\\jars\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
 		driver = new ChromeDriver();
 		context.setDriver(driver);
 		driver.manage().window().maximize();
