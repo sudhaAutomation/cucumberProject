@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.swhizz</groupId>
-	<artifactId>admin-portal</artifactId>
+	<groupId>com.admin</groupId>
+	<artifactId>admin-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>admin-portal</name>
+	<name>admin-demo</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -104,7 +104,7 @@
 						<include>**/TestNgCucumberSuiteRunner.java</include>
 					</includes>
 					<argLine>
-						-Dcucumber.execution.dry-run=true
+						-Dcucumber.execution.dry-run=false
 						-Dcucumber.filter.tags=""
 						-Dcucumber.plugin="pretty, html:target/bdd/report.html, testng:target/testng/"
 					</argLine>
