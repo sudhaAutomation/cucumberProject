@@ -53,7 +53,7 @@ public class AddCourseStepDefination {
 		driver.findElement(By.xpath("/html[1]/body[1]/p[1]")).sendKeys("shdfjgsfgdshfhdsgfhgdshfg");
 		driver.switchTo().parentFrame();
 
-		driver.findElement(By.name("userfile")).sendKeys(details.get("choose file"));
+		//driver.findElement(By.name("userfile")).sendKeys(details.get("choose file"));
 		driver.findElement(By.name("traning_video")).sendKeys(details.get("course video link"));
 		new Select(driver.findElement(By.name("popular_type"))).selectByVisibleText(details.get("is popular"));
 		driver.findElement(By.name("sort_order")).sendKeys(details.get("sort order"));
