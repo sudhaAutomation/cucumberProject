@@ -27,8 +27,7 @@ public class AddCourseStepDefination {
 	}
 	@Then("driver present in the dashborad")
 	public void driver_present_in_the_dashborad() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new io.cucumber.java.PendingException();
+	   System.out.println("System Presented in the DashBorad Page");
 	}
 	@When("admin clicks on the add course button")
 	public void admin_clicks_on_the_add_course_button() {

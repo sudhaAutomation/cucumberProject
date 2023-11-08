@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,7 +34,7 @@ public class LoginStepDefinations {
 	}
 
 	@Given("enters the username {string} and password {string}")
-	public void enters_the_username_and_password1(String username, String password) {
+	public void enters_the_username_and_password(String username, String password) {
 		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/form[1]/div[1]/input[1]"))
 				.sendKeys(username);
 		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/form[1]/div[2]/input[1]"))
@@ -50,6 +51,7 @@ public class LoginStepDefinations {
 	public void then_admin_views_the_dashboard_with_message(String string) {
 		System.out.println("dashboard page");
 		String exptitile = "DASHBOARD";
+		System.out.println(exptitile);
 		String Acttitle = driver.findElement(By.xpath("//header/div[1]/h3[1]")).getText();
 		Assert.assertTrue(Acttitle.equals(exptitile));
 	}
@@ -61,7 +63,7 @@ public class LoginStepDefinations {
 		Assert.assertTrue(actError.contains(expError));
 	}
 
-	@Then("admin close the browser")
+	@And("admin close the browser")
 	public void admin_close_the_browser() {
 		System.out.println("browser close");
 		driver.quit();

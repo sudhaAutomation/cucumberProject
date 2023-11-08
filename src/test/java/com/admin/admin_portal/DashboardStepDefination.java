@@ -13,7 +13,7 @@ public class DashboardStepDefination {
 		this.driver = context.getDriver();
 	}
 
-	@When("admin clicks on courses list option")
+	@When("admin clicks on courses list option")//admin clicks on courses list option
 	public void admin_clicks_on_courses_list_option() {
 		driver.findElement(By.xpath("//span[contains(text(),'Courses List')]")).click();
 	}

@@ -5,7 +5,6 @@ Feature: Add Course module
     Given admin opens the "http://integratedtoolingsystems.in/1swishzz_staging/admin" in the "chrome" browser
     And enters the username "admin@admin.com" and password "123456"
     When click on the login button
-   # And wait 8 seconds
     Then then admin views the dashboard with "Welcome Admin" message
     Then driver present in the dashborad
 
@@ -13,7 +12,6 @@ Feature: Add Course module
   Scenario: Display the Courses List
     When admin clicks on courses list option
     Then browser navigates to courses list page
-    
     When admin clicks on the add course button
     Then browser naviagtes to add course page
     Given following course details
