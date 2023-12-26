@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 import io.cucumber.java.en.And;
@@ -25,7 +26,10 @@ public class LoginStepDefinations {
 	public void admin_opens_the_in_the_browser(String url, String browser) {
 
 		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.setBinary(System.getProperty("browserBinary"));
+		driver = new ChromeDriver(options);
+
 		context.setDriver(driver);
 		driver.manage().window().maximize();
 		driver.get(url);
@@ -70,15 +74,14 @@ public class LoginStepDefinations {
 	}
 
 	@When("wait {int} seconds")
-	public void wait_seconds(long seconds)  {
+	public void wait_seconds(long seconds) {
 		try {
-			Thread.sleep(seconds*1000);
+			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		
+
 	}
 
 }
