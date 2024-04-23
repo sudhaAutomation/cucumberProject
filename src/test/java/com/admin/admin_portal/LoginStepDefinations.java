@@ -27,7 +27,7 @@ public class LoginStepDefinations {
 
 		System.setProperty("webdriver.chrome.driver", "bin/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
-		options.setBinary(System.getProperty("browserBinary"));
+		//options.setBinary(System.getProperty("browserBinary"));
 		driver = new ChromeDriver(options);
 
 		context.setDriver(driver);

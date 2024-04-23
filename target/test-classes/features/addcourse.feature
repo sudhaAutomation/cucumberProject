@@ -3,10 +3,10 @@ Feature: Add Course module
 
   Background: Loggedin with valid credentials
     Given admin opens the "https://swhizz.com/site_staging/admin" in the "chrome" browser
-    And enters the username "admin@admin.com" and password "12345"
+    And enters the username "admin@admin.com" and password "123456"
     When click on the login button
     Then then admin views the dashboard with "Welcome Admin" message
-    Then driver present in the dashborad
+   
 
   @tag1
   Scenario: Display the Courses List

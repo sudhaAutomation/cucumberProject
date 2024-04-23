@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
+ <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -99,16 +99,40 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.1.2</version>
-				<configuration>
-					<includes>
-						<include>**/TestNgCucumberSuiteRunner.java</include>
-					</includes>
-					<argLine>
-						-Dcucumber.execution.dry-run=false
-						-Dcucumber.filter.tags=""
-						-Dcucumber.plugin="pretty, html:target/bdd/report.html, testng:target/testng/"
-					</argLine>
-				</configuration>
+				<executions>
+					<execution>
+						<id>bdd</id>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<mainClass>io.cucumber.core.cli.Main</mainClass>
+							<arguments>
+								<argument>--glue</argument>
+								<argument>com.admin.admin_portal</argument>
+								<argument>features</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>testng</id>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<includes>
+								<include>**/TestNgCucumberSuiteRunner.java</include>
+							</includes>
+							<argLine>
+								-Dcucumber.execution.dry-run=false
+								-Dcucumber.filter.tags=""
+								-Dcucumber.plugin="pretty,
+								html:target/bdd/report.html, testng:target/testng/"
+							</argLine>
+						</configuration>
+
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>

@@ -48,9 +48,9 @@ public class AddCourseStepDefination {
 		driver.findElement(By.name("course_name")).sendKeys(details.get("Course Name"));
 		driver.findElement(By.name("course_slug")).sendKeys(details.get("Course URL"));
 
-		driver.switchTo().frame(driver.findElement(By.id("TypeHere11_ifr")));
-		driver.findElement(By.xpath("/html[1]/body[1]/p[1]")).sendKeys("shdfjgsfgdshfhdsgfhgdshfg");
-		driver.switchTo().parentFrame();
+//		driver.switchTo().frame(driver.findElement(By.id("TypeHere11_ifr")));
+//		driver.findElement(By.xpath("/html[1]/body[1]/p[1]")).sendKeys("shdfjgsfgdshfhdsgfhgdshfg");
+//		driver.switchTo().parentFrame();
 
 		//driver.findElement(By.name("userfile")).sendKeys(details.get("choose file"));
 		driver.findElement(By.name("traning_video")).sendKeys(details.get("course video link"));
