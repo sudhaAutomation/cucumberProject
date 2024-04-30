@@ -8,8 +8,5 @@ import io.cucumber.testng.CucumberOptions.SnippetType;
 		"com.admin.admin_portal" }, tags = "")
 public class TestNgCucumberSuiteRunner extends AbstractTestNGCucumberTests {
 
-	public TestNgCucumberSuiteRunner() {
-		System.out.println("TestNgCucumberSuiteRunner execution started...");
-	}
-
+	
 }

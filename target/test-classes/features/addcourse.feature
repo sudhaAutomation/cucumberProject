@@ -5,10 +5,10 @@ Feature: Add Course module
     Given admin opens the "https://swhizz.com/site_staging/admin" in the "chrome" browser
     And enters the username "admin@admin.com" and password "123456"
     When click on the login button
-    Then then admin views the dashboard with "Welcome Admin" message
+    Then admin views the dashboard with "Welcome Admin" message
    
 
-  @tag1
+  @Regression
   Scenario: Display the Courses List
     When admin clicks on courses list option
     Then browser navigates to courses list page

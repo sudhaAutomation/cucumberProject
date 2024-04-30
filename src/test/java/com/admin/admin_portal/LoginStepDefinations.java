@@ -51,7 +51,7 @@ public class LoginStepDefinations {
 				.sendKeys(Keys.ENTER);
 	}
 
-	@Then("then admin views the dashboard with {string} message")
+	@Then("admin views the dashboard with {string} message")
 	public void then_admin_views_the_dashboard_with_message(String string) {
 		System.out.println("dashboard page");
 		String exptitile = "DASHBOARD";
